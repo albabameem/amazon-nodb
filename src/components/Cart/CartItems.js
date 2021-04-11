@@ -3,7 +3,6 @@ import productImage from '../../assets/img/320x320/img2.jpg';
 
 const CartItems = (props) => {
     const cartItems = props.cartItems;
-    console.log(cartItems);
 
     
 
@@ -25,7 +24,7 @@ const CartItems = (props) => {
         <div class="media-body">
           <div class="row">
             <div class="col-md-7 mb-3 mb-md-0">
-              <a class="h5 d-block" href="#">{cartItem.title}</a>
+              <Link class="h5 d-block" href="#!" to={"/product?id="+cartItem.id}>{cartItem.title}</Link>
 
               <div class="d-block d-md-none">
                 <span class="h5 d-block mb-1">${cartItem.price}</span>
@@ -45,11 +44,11 @@ const CartItems = (props) => {
 
                 <div class="col-auto">
                   
-
-                  <a class="d-block text-body font-size-1" href="javascript:;">
-                    <i class="far fa-heart text-hover-primary mr-1"></i>
-                    <span class="font-size-1 text-hover-primary">Save for later</span>
+                  <a class="d-block text-body font-size-1 mb-1" role="button" onClick={() => props.removeCartItem(cartItem.id)}>
+                    <i class="far fa-trash-alt text-hover-primary mr-1"></i>
+                    <span class="font-size-1 text-hover-primary">Remove</span>
                   </a>
+                  
                 </div>
               </div>
             </div>

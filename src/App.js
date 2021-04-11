@@ -35,7 +35,7 @@ import ScrollToTop from './components/ScrollToTop';
 
 //main function
 function App() {
-  const tax = 13;
+  const tax = 10;
   const [cartItems, setCart] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
   const [categories, setCategory] = useState([]);
@@ -51,8 +51,15 @@ function App() {
     .then(response => response.json())
     .then(data => setProduct(data));
 
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0;
+    const cartItems = JSON.parse(localStorage.getItem("cartitems") || "[]");
+    
+    let totalAmount = 0; 
+    cartItems.forEach((item, index) => {
+        totalAmount = totalAmount + (parseInt(item.price) * parseInt(item.qty));
+    });
+
+    setCartTotal(parseInt(cartTotal) + totalAmount);
+    setCart(cartItems);
     
 
   },[]);
@@ -64,8 +71,28 @@ function App() {
       setCartItems = cartItems;
     }
 
-    setCartItems.push(item);
+    let itemQty = item.qty;
+    
 
+    const existingCheck = setCartItems.filter(obj => {return obj.id === item.id});
+
+    if(existingCheck.length){
+      
+      item = existingCheck[0];
+      if(itemQty > item.qty){
+        item.qty = parseInt(item.qty) + parseInt(itemQty);
+      }else if(itemQty < item.qty){
+        item.qty = parseInt(item.qty) - parseInt(itemQty);
+      }else{
+        item.qty = parseInt(item.qty);
+      }
+      
+    }else{
+      setCartItems.push(item);
+    }
+
+    
+    localStorage.setItem("cartitems", JSON.stringify(setCartItems))
     setCart(setCartItems);
   }
 
@@ -74,16 +101,24 @@ function App() {
     setCartTotal(0);
   }
 
+  const removeCartItem = (productId) => {
+    const cartItem = cartItems.filter(obj => {return obj.id === productId})[0];
+    let amountToRemove = parseInt(cartItem.price) * parseInt(cartItem.qty);
+    let newCart = cartItems.filter(obj => {return obj.id !== productId});
+    localStorage.setItem("cartitems", JSON.stringify(newCart))
+    setCart(newCart);
+    setCartTotal(parseInt(cartTotal) - amountToRemove);
+  }
+
 
   return (
     <div id="main-container">
       <Router>
-        <Header categories={categories} />
+        <Header cartItems={cartItems} categories={categories} />
        
         <ScrollToTop>
         <Switch>
           <Route exact path="/">
-            
             <Home products={products} categories={categories} />
           </Route>
           <Route path="/login">
@@ -126,7 +161,7 @@ function App() {
 
 
           <Route path="/cart">
-            <Cart tax={tax} cartTotal={cartTotal} cartItems={cartItems} clearCart={clearCart} />
+            <Cart products={products} removeCartItem={removeCartItem} tax={tax} cartTotal={cartTotal} cartItems={cartItems} clearCart={clearCart}  setCartTotal={setCartTotal} setCartItems={setCartItems} />
           </Route>
 
           <Route path="/checkout">

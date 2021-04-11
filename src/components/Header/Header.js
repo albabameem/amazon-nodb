@@ -22,6 +22,7 @@ const searchValidation = (e) => {
 
 const Header = (props) => {
   const categories = props.categories;
+  const cartCount = props.cartItems.length;
   return (
     <header id="header" className="header header-sticky-top-lg border-bottom">
       <div className="header-section">
@@ -41,10 +42,11 @@ const Header = (props) => {
                     <Link to="/login" id="blogMegaMenu" className="nav-link mx-3 text-primary text-center" href="#!" role="button">Hello,<br />Sign In</Link>
                   </li>
 
-                  <li>
+                  <li className="position-relative">
                     <Link to="/cart" className="btn btn-soft-dark btn-icon btn-smtransition-3d-hover" href="#!">
                       <i className="fas fa-lg fa-shopping-cart"></i>
                     </Link>
+                    <sup class="avatar-status avatar-primary">{cartCount}</sup>
                   </li>
 
                 </ul>
