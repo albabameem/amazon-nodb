@@ -43,11 +43,11 @@ function App() {
   
   useEffect(() => {
 
-    fetch('/categories')
+    fetch('https://ashop-jsondb.herokuapp.com/categories')
     .then(response => response.json())
     .then(data => setCategory(data));
 
-    fetch('/products')
+    fetch('https://ashop-jsondb.herokuapp.com/products')
     .then(response => response.json())
     .then(data => setProduct(data));
 
