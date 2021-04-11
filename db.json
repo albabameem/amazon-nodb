@@ -1,0 +1,283 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Apple AirPods with Charging Case",
+            "description": "The new AirPods -- complete with Wireless Charging Case -- deliver the wireless headphone experience, reimagined. Just pull them out of the case and they’re ready to use with your iPhone, Apple Watch, iPad or Mac.",
+            "image": "https://www.amazon.ca/images/I/71NTi82uBEL._AC_SL1500_.jpg",
+            "category": 1,
+            "inventory": 10,
+            "bestseller": 1,
+            "hero": 0,
+            "price": 229
+        },
+        {
+            "id": 2,
+            "title": "Fitbit Inspire 2 Health & Fitness Tracker",
+            "description": "The Fitbit Inspire 2 fitness tracker is the fuss-free way to manage your activity levels and fitness goals. It tracks your steps, heart rate, calories burned, sleep, and more so you can ensure you're on the right track. It syncs to your smartphone so you'll receive call and text notifications, even when you're on the go. With built-in Tile technology, easy-to-use Inspire 2 is now easy to find.",
+            "image": "https://www.amazon.ca/images/I/61yGu14KR8L._AC_SL1500_.jpg",
+            "category": 1,
+            "inventory": 10,
+            "bestseller": 0,
+            "hero": 1,
+            "price": 129
+        },
+        {
+            "id": 3,
+            "title": "Kindle Paperwhite",
+            "description": "No matter where your day takes you, the Amazon Kindle Paperwhite eBook reader lets you bring your library along for the ride. Boasting a 6' touchscreen display with E-ink technology, this ultra-light, ultra-thin eReader provides a glare-free reading experience in any light. Its long-life battery keeps the device powered up for weeks.",
+            "image": "https://www.amazon.ca/images/I/61eAq6gg-XL._AC_SL1000_.jpg",
+            "category": 1,
+            "inventory": 10,
+            "bestseller": 0,
+            "hero": 0,
+            "price": 139
+        },
+        {
+            "id": 4,
+            "title": "Lenovo Legion 5 Gaming Laptop",
+            "description": "Welcome to the next generation of gaming performance with the AMD Ryzen 7 4800H mobile processor, 16GB 3200MHz DDR4 memory, and 512GB M.2 NVMe PCIe SSD storage.",
+            "image": "https://www.amazon.ca/images/I/81w%2B3k4U8PL._AC_SL1500_.jpg",
+            "category": 1,
+            "inventory": 10,
+            "bestseller": 0,
+            "hero": 0,
+            "price": 1292
+        },
+        {
+            "id": 5,
+            "title": "Acer Nitro Gaming Notebook",
+            "description": "Affordable gaming doesn’t mean sacrificing performance! With Acer’s Nitro 5 gaming notebook, you get a speedy quad core I5 processor, 8Gb of memory and a dedicated 4Gb Nvidia video card. It comes with a backlite keyboard so you will always find yourself around late into the night. ",
+            "image": "https://www.amazon.ca/images/I/71ACcqJAmxL._AC_SL1386_.jpg",
+            "category": 1,
+            "inventory": 10,
+            "bestseller": 0,
+            "hero": 0,
+            "price": 869
+        },
+        {
+            "id": 6,
+            "title": "Samsung Galaxy Tab A",
+            "description": "Minimal bezel; Maximum view; Watch, stream and browse on a 10.1 Inches; Full HD corner to corner Display; The lightweight premium metal design goes anywhere you go. Big sound for big entertainment; The perfect complement to a wide, immersive picture, Dolby Atoms Surround sound fills the room with cinematic clarity",
+            "image": "https://www.amazon.ca/images/I/61ndwk9f8DL._AC_SL1500_.jpg",
+            "category": 1,
+            "inventory": 10,
+            "bestseller": 1,
+            "hero": 0,
+            "price": 288
+        },
+        {
+            "id": 7,
+            "title": "PlayStation 5 Digital Edition Console",
+            "description": "Unleash new gaming possibilities beyond your wildest imagination with the PlayStation 5 Digital Edition console. Get lightning-fast loading times on the PS5 with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, 3D Audio, 4K and 8K output, and an all-new generation of incredible PlayStation games.",
+            "image": "https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/149/14962/14962184.jpg",
+            "category": 1,
+            "inventory": 10,
+            "bestseller": 1,
+            "hero": 1,
+            "price": 499
+        },
+        {
+            "id": 8,
+            "title": "PlayStation 5 DualSense Wireless Controller",
+            "description": "Bring the action to life in the palms of your hands with the PlayStation 5 DualSense wireless controller. It offers immersive haptic feedback, dynamic adaptive triggers, a built-in microphone, and more, all integrated into an iconic comfortable design that's sure to deliver a deeper, highly immersive gaming experience on your PS5.",
+            "image": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/149/14962/14962193.jpg",
+            "category": 1,
+            "inventory": 10,
+            "hero": 0,
+            "bestseller": 0,
+            "price": 89
+        },
+        {
+            "id": 9,
+            "title": "Garmin fenix 5X Plus Sapphire",
+            "description": "Working towards your fitness goals just got a lot more fun, with the Garmin fenix 5X Plus Sapphire smartwatch series. Made for life on the move, this rugged watch tracks fitness data, stores and plays music, offers a contactless pay solution, and more for the ultimate on-the-go active solution.",
+            "image": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/130/13011/13011285.jpg",
+            "category": 1,
+            "inventory": 10,
+            "bestseller": 0,
+            "hero": 1,
+            "price": 499
+        },
+        {
+            "id": 10,
+            "title": "JBL Club 950NC",
+            "description": "These JBL Club 950NC over-ear Bluetooth headphones adapt to your surroundings with active noise cancelling. Boasting an over-ear design, these headphones come with premium materials that offer comfortable all-day long wear. A lithium-ion battery provides a up to 55 hours of wireless music when ANC is turned off for nearly never-ending enjoyment.",
+            "image": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/145/14538/14538660.jpg",
+            "category": 1,
+            "inventory": 10,
+            "hero": 0,
+            "bestseller": 0,
+            "price": 179
+        },
+        {
+            "id": 11,
+            "title": "Bose SoundLink II",
+            "description": "With the Bose SoundLink II over-ear wireless headphones, you can enjoy deep, immersive sound that's crystal-clear at any volume. You can also pair up to 2 devices at once so you can watch a movie on your tablet while staying connected to your smartphone. The dual microphone rejects outside noise and wind for enhanced clarity.",
+            "image": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/103/10389/10389797.jpg",
+            "category": 1,
+            "inventory": 10,
+            "hero": 1,
+            "bestseller": 0,
+            "price": 269
+        },
+        {
+            "id": 12,
+            "title": "Sennheiser Over-Ear Noise Cancelling",
+            "description": "Listen to your favourite beats with dynamic and detailed audio with the Sennheiser over-hear noise cancelling headphones. Featuring a minimalist design and a battery life of up to 30 hours, it is an excellent accessory for music junkies. It also comes with a virtual assistant button for voice interaction with Siri and Google Assistant.",
+            "image": "https://multimedia.bbycastatic.ca/multimedia/products/500x500/149/14926/14926557.jpg",
+            "category": 1,
+            "inventory": 10,
+            "hero": 0,
+            "bestseller": 0,
+            "price": 229
+        },
+        {
+            "id": 13,
+            "title": "Moscow Plus Electric Mountain Bike",
+            "description": "Focus On Quality: Our exclusive E-bike frames and components have been rigorously tested to guarantee quality. We combined our manufacturing knowledge with Shimano, Tektro, and other top cycling brand components to create one of the best value electric mountain bikes on the market.",
+            "image": "https://www.amazon.ca/images/I/81X--qZmLrL._AC_SL1500_.jpg",
+            "category": 2,
+            "hero": 0,
+            "inventory": 15,
+            "bestseller": 0,
+            "price": 2099
+        },
+        {
+            "id": 14,
+            "title": "OBK 27.5 Wheels Mountain Bike",
+            "description": "Great Braking System: The front and rear disc brakes and help keep the cyclist safe even in high speeds and down sloppy terrains. You will also have more control on when and where to stop. With Shimano 3*7 shifter,front derallieurans rear deralieur make the gearshift sensitive.",
+            "image": "https://www.amazon.ca/images/I/71XwNOnbbmL._AC_SL1500_.jpg",
+            "category": 2,
+            "inventory": 15,
+            "hero": 0,
+            "bestseller": 0,
+            "price": 349
+        },
+        {
+            "id": 15,
+            "title": "Eurobike EURX1 Mountain Bike",
+            "description": "21 Speed Shifting system fashion MTB Bicycles special for Student group.Free pedals include in the packages. Dual Disc brake provided great stopping power.Free pedals included in the packages. This bicycle arrives with 85% assembled. You need to install the front wheel, pedals, handlebar, seat and air up the tires. We do not supply any bicycle assembly service for online pays or for free.",
+            "image": "https://www.amazon.ca/images/I/71oQQBPsRML._AC_SL1200_.jpg",
+            "category": 2,
+            "inventory": 15,
+            "hero": 0,
+            "bestseller": 0,
+            "price": 428
+        },
+        {
+            "id": 16,
+            "title": "OBK XC550 Road Bike 700C",
+            "description": "Front and rear daul disc brakes make brakes more sensitive. Aluminum alloy wheels and magnesium alloy wheels for your choice. 21 speed makes the speed change more smoothly. 49cm and 54cm frame for different height. Easy assembly Required includes all the tools you need for building and maintaining your own bicycle.",
+            "image": "https://www.amazon.ca/images/I/71c8N1XX9qL._AC_SL1500_.jpg",
+            "category": 2,
+            "inventory": 15,
+            "bestseller": 1,
+            "hero": 0,
+            "price": 348
+        },
+        {
+            "id": 17,
+            "title": "OPTIMUM NUTRITION GOLD STANDARD 100% Whey ProteinOBK XC550 Road Bike 700C",
+            "description": "A whey protein shake consumed before or after exercise helps kick-start this recovery process. On's attention to detail extends to mixability. This superior quality powder instantly mixes using a shaker or a glass and spoon Gold standard 100% Whey, we're able to pack 24 grams of protein into every serving to support your muscle building needs after training",
+            "image": "https://www.amazon.ca/images/I/81pLCYKZhxL._AC_SL1500_.jpg",
+            "category": 3,
+            "inventory": 20,
+            "hero": 0,
+            "bestseller": 0,
+            "price": 85
+        },
+        {
+            "id": 18,
+            "title": "Cellucor C4 Sport Pre Workout Powder Sports Hydration & Energy Drink",
+            "description": "C4 Sport Pre-Workout combines two separate blends to support performance and energy into one, so every base of your workout is covered. C4 Sport carries the Informed-Choice logo meaning it has gone through a full manufacturing audit and is regularly tested for a wide variety of WADA banned substances to ensure safety for sport.",
+            "image": "https://www.amazon.ca/images/I/81ZNB%2Bop75L._AC_SL1500_.jpg",
+            "category": 3,
+            "inventory": 20,
+            "hero": 0,
+            "bestseller": 0,
+            "price": 25
+        },
+        {
+            "id": 19,
+            "title": "MuscleTech Nitro-Tech Whey Protein",
+            "description": "BUILD MORE STRENGTH THAN WITH REGULAR WHEY PROTEIN - Contains a research-proven 3g dose of creatine monohydrate, which – combined with whey protein – helps to build more strength than regular whey protein.",
+            "image": "https://www.amazon.ca/images/I/81zZxETbu0L._AC_SL1500_.jpg",
+            "category": 3,
+            "inventory": 20,
+            "bestseller": 1,
+            "hero": 0,
+            "price": 71
+        },
+        {
+            "id": 20,
+            "title": "BSN SYNTHA-6 Whey Protein Powder",
+            "description": "SYNTHA-6 is an ultra-premium protein powder and BSN's best-tasting protein on the market. SYNTHA-6 not only includes essential amino acids and essential fatty acids, but is also an excellent source of fiber and contains 6g of fat per serving, which makes it a nutritious and multi-functional protein supplement.",
+            "image": "https://www.amazon.ca/images/I/81eLAokti0L._AC_SL1500_.jpg",
+            "category": 3,
+            "inventory": 20,
+            "bestseller": 0,
+            "hero": 0,
+            "price": 83
+        },
+        {
+            "id": 21,
+            "title": "HOMKO Decorative Mason Jar Wall Decor",
+            "description": "TIMER FUNCTION, more energy saving. Using TIMER mode: light is on for 6 hours, then auto-off for 18 hours, next day the same time automatically lights up for 6 hours, repeated cycle. For instance, you turn on at 6:00 pm, it will auto-off on 0:00 am, then auto-on by 6:00 pm, auto-off by 0:00 am",
+            "image": "https://www.amazon.ca/images/I/71TdUAS-qjL._AC_SL1500_.jpg",
+            "category": 4,
+            "inventory": 20,
+            "bestseller": 0,
+            "hero": 0,
+            "price": 29
+        },
+        {
+            "id": 22,
+            "title": "Rustic Grey Mason Jar Sconces",
+            "description": "Bring warmth and beauty to any room with this decorative wall sconces. Handmade and assembled with love and care, these mason jars have an intentionally distressed look that brighten a room and give it an antique appeal. They also combine the perfect style of modern and farmhouse statement that adds a shabby look. Hang this rustic chic decor in your kitchen, hallway, bathroom, and anywhere you desire",
+            "image": "https://www.amazon.ca/images/I/71ciMyz79aL._AC_SL1500_.jpg",
+            "category": 4,
+            "inventory": 20,
+            "bestseller": 0,
+            "hero": 0,
+            "price": 36
+        },
+        {
+            "id": 23,
+            "title": "Large Cotton Rope Storage Basket",
+            "description": "Our warm mix brown white rope storage basket is made of 100% cotton woven thread. Compared with similar products, the material is soft and durable, free from any scratch and damage and does not contain any chemical substances. The woven basket that neuter changes a design is put in the livng room very contracted atmosphere. It's can serve as much succulent plant hanger not only, also deposit the household adorn article such as blanket, pillow, childs toy etc. Sturdy baskets keep clutter out of every corner of your home.",
+            "image": "https://www.amazon.ca/images/I/81bHLODQAhL._AC_SL1500_.jpg",
+            "category": 4,
+            "inventory": 20,
+            "hero": 0,
+            "bestseller": 0,
+            "price": 32
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Electronics",
+            "description": "Buy the latest trending electronic items at unbelivable prices.",
+            "image": "img3.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Bicycles",
+            "description": "Stay fit with our wide range of bicycles.",
+            "image": "img4.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Nutrition",
+            "description": "Supplement your workout with our line of nutrition products.",
+            "image": "img17.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Home & Decor",
+            "description": "Plan your house projects with our elegant collection of home items.",
+            "image": "img6.jpg"
+        }
+    ]
+}
