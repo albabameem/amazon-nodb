@@ -52,7 +52,10 @@ function App() {
 
     fetch('https://amazon-backspring.herokuapp.com/categories')
       .then(response => response.json())
-      .then(data => setCategory(data.body));
+      .then(data => {
+        console.log(data.body,'cat');
+        setCategory(data.body)
+      });
 
     fetch('https://amazon-backspring.herokuapp.com/products')
       .then(response => response.json())
