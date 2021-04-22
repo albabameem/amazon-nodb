@@ -34,7 +34,24 @@ const Login = () => {
 
     const submitForm = (event) => {
         event.preventDefault();
-        validateForm();
+        if (validateForm()){
+            fetch('https://amazon-backspring.herokuapp.com/auth', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({email: email, password: password})
+            }).then(function(res) {
+                return res.json();
+            }).then(function(res){
+                if(res.message == 'Login successful'){
+                    alert(res.message);
+                }else{
+                    alert(res.message);
+                }
+            });
+        
+        }
     }
     return (
         <div className="container space-top-1 space-top-md-2 space-bottom-2 space-bottom-lg-3">

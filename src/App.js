@@ -50,11 +50,11 @@ function App() {
 
   useEffect(() => {
 
-    fetch('https://ashop-jsondb.herokuapp.com/categories')
+    fetch('https://amazon-backspring.herokuapp.com/categories')
       .then(response => response.json())
       .then(data => setCategory(data));
 
-    fetch('https://ashop-jsondb.herokuapp.com/products')
+    fetch('https://amazon-backspring.herokuapp.com/products')
       .then(response => response.json())
       .then(data => setProduct(data));
 
