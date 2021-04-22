@@ -119,7 +119,7 @@ const Contact = () => {
               <input type="checkbox" class="custom-control-input" id="newsletterCheckbox" name="newsletterCheckbox" required
                      data-msg="Please accept our Terms and Conditions." />
               <label class="custom-control-label" for="newsletterCheckbox">
-                <small>I want to receive Front's Newsletters</small>
+                <small>I want to receive AShop's Newsletters</small>
               </label>
             </div>
           </div>

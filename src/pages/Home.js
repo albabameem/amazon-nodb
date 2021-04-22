@@ -3,13 +3,20 @@ import Hero from '../components/Home/Hero/Hero';
 import Categories from '../components/Home/Categories/Categories';
 import Bestsellers from '../components/Home/Bestsellers/Bestsellers';
 
-const Home = (props) => {
+import { useContext } from "react";
+import aShopContext from "../components/Context/ContextProvider";
+
+const Home = () => {
+  const context = useContext(aShopContext);
+
+  const categories = context.categories;
+  const products = context.products;
 
     return (
         <div id="home-container">
-            <Hero products={props.products} categories={props.categories}  />
-            <Categories categories={props.categories} />
-            <Bestsellers products={props.products} categories={props.categories} />
+            <Hero products={products} categories={categories}  />
+            <Categories categories={categories} />
+            <Bestsellers products={products} categories={categories} />
         </div>
     )
 }

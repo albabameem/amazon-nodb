@@ -1,7 +1,5 @@
 import Slider from "react-slick";
 import '../../../assets/vendor/slick-carousel/slick/slick.css';
-import sliderImg1 from '../../../assets/img/mockups/img5.png';
-import sliderImg2 from '../../../assets/img/mockups/img6.png';
 import { Link } from 'react-router-dom';
 
 const CustomPrev = (props) => {
@@ -39,6 +37,7 @@ const sliderSettings = {
 };
 
 const Hero = (props) => {
+
     const products = props.products.filter(obj => {return obj.hero == 1});
     return (
         

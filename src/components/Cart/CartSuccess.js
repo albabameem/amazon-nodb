@@ -10,7 +10,7 @@ const CartSuccess = (props) => {
               <h1 class="h2">Your order is completed!</h1>
               <p>Thank you for your order! Your order is being processed and will be completed within 3-6 hours. You will receive an email confirmation when your order is completed.</p>
             </div>
-            <Link to="/listings" class="btn btn-primary btn-pill transition-3d-hover px-5" href="#">Continue Shopping</Link>
+            <Link to="/listings/all" class="btn btn-primary btn-pill transition-3d-hover px-5" href="#">Continue Shopping</Link>
           </div>
         </div>
 

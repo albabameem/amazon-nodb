@@ -1,11 +1,5 @@
 import Slider from "react-slick";
 import '../../../assets/vendor/slick-carousel/slick/slick.css';
-import sliderImg1 from '../../../assets/img/mockups/img1.png';
-import sliderImg2 from '../../../assets/img/mockups/img5.png';
-import sliderImg3 from '../../../assets/img/mockups/img6.png';
-import sliderImg4 from '../../../assets/img/mockups/img1.png';
-import sliderImg5 from '../../../assets/img/mockups/img5.png';
-import sliderImg6 from '../../../assets/img/mockups/img6.png';
 import { Link } from 'react-router-dom';
 
 const CustomPrev = (props) => {

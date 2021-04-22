@@ -33,13 +33,13 @@ const Sidebar = (props) => {
               <div className="mt-3 mt-lg-0">
                 <h2 className="h4">Categories</h2>
 
-                <Link className="dropdown-item d-flex justify-content-between align-items-center px-0" to="/listings">
+                <Link className="dropdown-item d-flex justify-content-between align-items-center px-0" to="/listings/all">
                   All
                   <span className="badge border badge-pill">{products.length}</span>
                 </Link>
                 {categories.map((category, index) => {
                   return (
-                    <Link className="dropdown-item d-flex justify-content-between align-items-center px-0" to={"/listings?cat="+category.id}>
+                    <Link className="dropdown-item d-flex justify-content-between align-items-center px-0" to={"/listings/"+category.id}>
                       {category.name}
                       <span className="badge border badge-pill">{products.filter(obj => {return obj.category === category.id}).length}</span>
                     </Link>

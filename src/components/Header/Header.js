@@ -2,27 +2,32 @@ import logo from '../../assets/svg/logos/logo_transparent.png';
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 
-const searchValidation = (e) => {
-  let searchVal = document.getElementById('searchField');
-  if(searchVal.value == ''){
-    alert('Search query cannot be empty');
-    searchVal.focus();
-    e.preventDefault();
-    e.stopPropagation();
-  }
+import { useState, useContext } from "react";
+import aShopContext from "../Context/ContextProvider";
 
-  if(!searchVal.value.match(/^[^<>!$'\"/;`%]*$/)){
-    alert('Search query cannot contain special characters.')
-    searchVal.focus();
-    e.preventDefault();
-    e.stopPropagation();
-  }
+
+
+const Header = () => {
+  const [searchKeyword, setSearchKeyword] = useState('');
+  const context = useContext(aShopContext);
+  const categories = context.categories;
+  const cartItems = context.cartItems;
+  const cartCount = cartItems.length;
+
+  const searchValidation = (e) => {
+    if(searchKeyword == ''){
+      alert('Search query cannot be empty');
+      e.preventDefault();
+      e.stopPropagation();
+    }
   
-}
-
-const Header = (props) => {
-  const categories = props.categories;
-  const cartCount = props.cartItems.length;
+    if(!searchKeyword.match(/^[^<>!$'\"/;`%]*$/)){
+      alert('Search query cannot contain special characters.')
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    
+  }
   return (
     <header id="header" className="header header-sticky-top-lg border-bottom">
       <div className="header-section">
@@ -75,7 +80,7 @@ const Header = (props) => {
                 <div className="position-static mx-0 ml-md-auto mt-4 mt-md-0 w-100 w-md-50 mr-4">
                   <div className="border rounded p-0">
                     
-                    <form method="get" action="/listings">
+                    <form method="get" action="/listings/all">
                       <div className="form-row">
                       <div className="col-sm mb-2 mb-sm-0">
                         <div className="input-group input-group-merge input-group-borderless">
@@ -85,7 +90,9 @@ const Header = (props) => {
                             </div>
                           </div>
 
-                          <input type="text" className="form-control" name="query" id="searchField" placeholder="Search here..." aria-label="search-field" />
+                          <input type="text" className="form-control" name="query" id="searchField" placeholder="Search here..." aria-label="search-field" onKeyUp={(event)=>{
+                            setSearchKeyword(event.target.value);
+                          }} />
                         </div>
                       </div>
                       <div className="col-sm-auto input-group-flush pr-3">
@@ -111,7 +118,7 @@ const Header = (props) => {
         </div>
       </div>
 
-      <Navigation categories={props.categories} />
+      <Navigation categories={categories} />
     </header>
   )
 }

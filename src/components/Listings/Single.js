@@ -3,59 +3,63 @@ import {
     BrowserRouter as Router,
     Link,
     useLocation
-  } from "react-router-dom";
+} from "react-router-dom";
+
+import { useState, useContext } from "react";
+import aShopContext from "../Context/ContextProvider";
 
 function useQuery() {
     return new URLSearchParams(useLocation().search);
-  }
+}
 
-const Single = (props) => {
-    const products = props.products;
+const Single = () => {
+    const context = useContext(aShopContext)
+    const products = context.products;
+    const [quantity, setQuantity] = useState(1);
 
     const query = useQuery();
 
-    
-    const product = products.filter(obj => {return obj.id == query.get('id')});
+
+    const product = products.filter(obj => { return obj.id == query.get('id') });
     const productData = (product.length ? product[0] : []);
-    
-    const addItem = (e) =>{
-        let input = document.getElementById('qty');
-        if(input.value <= 0){
+
+    const addItem = (e) => {
+        if (quantity <= 0) {
             alert('Please enter 1 or more quantity');
             e.preventDefault();
             e.stopPropagation();
             return false;
         }
 
-        if(input.value > productData.inventory){
+        if (quantity > productData.inventory) {
             alert("Sorry, we don't have that much stock.");
             e.preventDefault();
             e.stopPropagation();
             return false;
         }
 
-        productData.qty = input.value;
-        let newPrice = parseInt(props.cartTotal) + (parseInt(productData.price) * parseInt(productData.qty));
+        productData.qty = quantity;
+        let newPrice = parseInt(context.cartTotal) + (parseInt(productData.price) * parseInt(productData.qty));
 
-        props.setCartItems(productData);
-        props.setCartTotal(newPrice);
+        context.setCartItems(productData);
+        context.setCartTotal(newPrice);
     }
 
     const increaseQty = () => {
-        let input = document.getElementById('qty');
-        if(input.value >= productData.inventory){
+        if (quantity >= productData.inventory) {
             alert("Sorry, we don't have that much stock.");
-            input.value = productData.inventory;
-        }else{
-        input.value = parseInt(input.value) + 1;}
+            setQuantity(productData.inventory)
+        } else {
+            setQuantity(parseInt(quantity) + 1)
+        }
     }
 
     const decreaseQty = () => {
-        let input = document.getElementById('qty');
-        if(input.value <= 1){
-            input.value = 1;
-        }else{
-        input.value = parseInt(input.value) - 1;}
+        if (quantity <= 1) {
+            setQuantity(1);
+        } else {
+            setQuantity(parseInt(quantity) - 1);
+        }
     }
     return (
         <div className="container space-top-1 space-top-md-2 space-bottom-2 space-bottom-lg-3">
@@ -63,9 +67,9 @@ const Single = (props) => {
                 <div className="col-lg-7 mb-7 mb-lg-0">
                     <div className="pr-lg-4">
                         <div className="position-relative">
-                            <div  className=" border rounded-lg">
+                            <div className=" border rounded-lg">
                                 <div className="js-slide">
-                                    <img style={{height: "40vh", objectFit: "contain"}} className="img-fluid w-100 rounded-lg" src={productData.image} alt="Image Description" />
+                                    <img style={{ height: "40vh", objectFit: "contain" }} className="img-fluid w-100 rounded-lg" src={productData.image} alt="Image Description" />
                                 </div>
                             </div>
 
@@ -91,7 +95,7 @@ const Single = (props) => {
                         <div className="js-quantity-counter row align-items-center">
                             <div className="col-7">
                                 <small className="d-block text-body font-weight-bold">Select quantity</small>
-                                <input className="js-result form-control h-auto border-0 rounded-lg p-0" id="qty" type="text" value="1" />
+                                <input className="js-result form-control h-auto border-0 rounded-lg p-0" id="qty" type="text" value={quantity} />
                             </div>
                             <div className="col-5 text-right">
                                 <a className="js-minus btn btn-xs btn-icon btn-outline-secondary rounded-circle" onClick={decreaseQty} >

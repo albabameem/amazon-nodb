@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -31,6 +31,9 @@ import Single from "./components/Listings/Single";
 import Checkout from './components/Cart/CartSuccess';
 import ScrollToTop from './components/ScrollToTop';
 
+//context
+import aShopContext from "./components/Context/ContextProvider";
+
 
 
 //main function
@@ -40,58 +43,62 @@ function App() {
   const [cartTotal, setCartTotal] = useState(0);
   const [categories, setCategory] = useState([]);
   const [products, setProduct] = useState([]);
-  
+  const [user, setUser] = useState([]);
+  const [userData, setUserData] = useState([]);
+
+
+
   useEffect(() => {
 
     fetch('https://ashop-jsondb.herokuapp.com/categories')
-    .then(response => response.json())
-    .then(data => setCategory(data));
+      .then(response => response.json())
+      .then(data => setCategory(data));
 
     fetch('https://ashop-jsondb.herokuapp.com/products')
-    .then(response => response.json())
-    .then(data => setProduct(data));
+      .then(response => response.json())
+      .then(data => setProduct(data));
 
     const cartItems = JSON.parse(localStorage.getItem("cartitems") || "[]");
-    
-    let totalAmount = 0; 
+
+    let totalAmount = 0;
     cartItems.forEach((item, index) => {
-        totalAmount = totalAmount + (parseInt(item.price) * parseInt(item.qty));
+      totalAmount = totalAmount + (parseInt(item.price) * parseInt(item.qty));
     });
 
     setCartTotal(parseInt(cartTotal) + totalAmount);
     setCart(cartItems);
-    
 
-  },[]);
+
+  }, []);
 
 
   const setCartItems = (item) => {
     let setCartItems = []
-    if(cartItems.length){
+    if (cartItems.length) {
       setCartItems = cartItems;
     }
 
     let itemQty = item.qty;
-    
 
-    const existingCheck = setCartItems.filter(obj => {return obj.id === item.id});
 
-    if(existingCheck.length){
-      
+    const existingCheck = setCartItems.filter(obj => { return obj.id === item.id });
+
+    if (existingCheck.length) {
+
       item = existingCheck[0];
-      if(itemQty > item.qty){
+      if (itemQty > item.qty) {
         item.qty = parseInt(item.qty) + parseInt(itemQty);
-      }else if(itemQty < item.qty){
+      } else if (itemQty < item.qty) {
         item.qty = parseInt(item.qty) - parseInt(itemQty);
-      }else{
+      } else {
         item.qty = parseInt(item.qty);
       }
-      
-    }else{
+
+    } else {
       setCartItems.push(item);
     }
 
-    
+
     localStorage.setItem("cartitems", JSON.stringify(setCartItems))
     setCart(setCartItems);
   }
@@ -102,9 +109,9 @@ function App() {
   }
 
   const removeCartItem = (productId) => {
-    const cartItem = cartItems.filter(obj => {return obj.id === productId})[0];
+    const cartItem = cartItems.filter(obj => { return obj.id === productId })[0];
     let amountToRemove = parseInt(cartItem.price) * parseInt(cartItem.qty);
-    let newCart = cartItems.filter(obj => {return obj.id !== productId});
+    let newCart = cartItems.filter(obj => { return obj.id !== productId });
     localStorage.setItem("cartitems", JSON.stringify(newCart))
     setCart(newCart);
     setCartTotal(parseInt(cartTotal) - amountToRemove);
@@ -113,70 +120,72 @@ function App() {
 
   return (
     <div id="main-container">
-      <Router>
-        <Header cartItems={cartItems} categories={categories} />
-       
-        <ScrollToTop>
-        <Switch>
-          <Route exact path="/">
-            <Home products={products} categories={categories} />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/registration">
-            <Registration />
-          </Route>
+      <aShopContext.Provider value={{ categories, user, products, setUser, userData, cartItems, setCartItems, cartTotal, setCartTotal, clearCart, removeCartItem, tax}}>
+        <Router>
+          <Header />
 
-          <Route path="/categories">
-            <AllCategories categories={categories} />
-          </Route>
+          <ScrollToTop>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/registration">
+                <Registration />
+              </Route>
 
-          <Route path="/listings">
-            <Listings products={products} categories={categories}  />
-          </Route>
-          <Route path="/product">
-            
-            <Single products={products} cartTotal={cartTotal} setCartTotal={setCartTotal} setCartItems={setCartItems} />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
+              <Route path="/categories">
+                <AllCategories />
+              </Route>
 
-          <Route path="/terms">
-            <Terms />
-          </Route>
+              <Route path="/listings/:id">
+                <Listings products={products} categories={categories} />
+              </Route>
+              <Route path="/product">
 
-          <Route path="/privacy">
-            <Privacy />
-          </Route>
+                <Single />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
 
-          <Route path="/blogs">
-            <Blogs />
-          </Route>
+              <Route path="/terms">
+                <Terms />
+              </Route>
 
-          <Route path="/contact">
-            <Contact />
-          </Route>
+              <Route path="/privacy">
+                <Privacy />
+              </Route>
+
+              <Route path="/blogs">
+                <Blogs />
+              </Route>
+
+              <Route path="/contact">
+                <Contact />
+              </Route>
 
 
-          <Route path="/cart">
-            <Cart products={products} removeCartItem={removeCartItem} tax={tax} cartTotal={cartTotal} cartItems={cartItems} clearCart={clearCart}  setCartTotal={setCartTotal} setCartItems={setCartItems} />
-          </Route>
+              <Route path="/cart">
+                <Cart/>
+              </Route>
 
-          <Route path="/checkout">
+              <Route path="/checkout">
 
-            <Checkout />
-          </Route>
+                <Checkout />
+              </Route>
 
-          <Route path="/blog">
-            <Blog />
-          </Route>
-        </Switch>
-        </ScrollToTop>
-        
-        <Footer />
-      </Router>
+              <Route path="/blog">
+                <Blog />
+              </Route>
+            </Switch>
+          </ScrollToTop>
+
+          <Footer />
+        </Router>
+      </aShopContext.Provider>
     </div>
   );
 }

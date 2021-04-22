@@ -1,14 +1,18 @@
 
 import SubHero from '../components/SubHero/SubHero';
-import catImg from '../assets/svg/components/abstract-shapes-13.svg';
 import {Link} from 'react-router-dom';
-const importImage = (image) => {
-  return require(`../assets/img/900x900/${image}`).default;
-} 
 
-const AllCategories = (props) => {
 
-  const categories = props.categories;
+import { useContext } from "react";
+import aShopContext from "../components/Context/ContextProvider";
+
+const AllCategories = () => {
+  const {categories} = useContext(aShopContext);
+
+  const importImage = (image) => {
+    return require(`../assets/img/900x900/${image}`).default;
+  } 
+  
   return (
     <div>
       <SubHero title="Our Categories" subtitle="Browse through our categories" />

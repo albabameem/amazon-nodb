@@ -83,7 +83,7 @@ const Header = () => {
 
                                 <ul className="nav nav-sm nav-x-0 nav-white flex-column">
                                     <li className="nav-item">
-                                        <Link to="/listings" className="nav-link" href="#">
+                                        <Link to="/listings/all" className="nav-link" href="#">
                                             <span className="media align-items-center">
                                                 <i className="fa fa-shopping-cart mr-2"></i>
                                                 <span className="media-body">All Products</span>
