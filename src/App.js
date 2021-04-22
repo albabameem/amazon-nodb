@@ -52,11 +52,11 @@ function App() {
 
     fetch('https://amazon-backspring.herokuapp.com/categories')
       .then(response => response.json())
-      .then(data => setCategory(data));
+      .then(data => setCategory(data.body));
 
     fetch('https://amazon-backspring.herokuapp.com/products')
       .then(response => response.json())
-      .then(data => setProduct(data));
+      .then(data => setProduct(data.body));
 
     const cartItems = JSON.parse(localStorage.getItem("cartitems") || "[]");
 
